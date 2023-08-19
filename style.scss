@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 $primary-color: #272727;
+$secondary-color: #fff;
+$tertiary-color: #f2f2f2;
+$quaternary-color: #e5e5e5;
+
+$font-color-light: #fff;
+$font-color-dark: #000;
+$font-color-active: blue;
+
 $font-family: 'Barlow', sans-serif;
+$font-weight-light: 400;
+$font-weight-bold: 500;
 
 body {
     background: $primary-color;
@@ -22,7 +32,7 @@ body {
                 justify-content: center;
                 align-items: center;
 
-                .upperLinks > .topMenu {
+                .upperLinks>.topMenu {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -31,19 +41,19 @@ body {
                     li {
                         list-style: none;
                         font-size: 1.2rem;
-                        font-weight: 400;
-                        color: #fff;
+                        font-weight: $font-weight-light;
+                        color: $font-color-light;
                         cursor: pointer;
 
                         &:hover {
-                            color: #fff;
-                            font-weight: 500;
+                            color: $font-color-light;
+                            font-weight: $font-weight-bold;
                         }
                     }
                 }
             }
 
-            .lowerLinks > .bottomMenu {
+            .lowerLinks>.bottomMenu {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -52,13 +62,13 @@ body {
                 li {
                     list-style: none;
                     font-size: 1.2rem;
-                    font-weight: 400;
-                    color: #fff;
+                    font-weight: $font-weight-light;
+                    color: $font-color-light;
                     cursor: pointer;
 
                     &:hover {
-                        color: #fff;
-                        font-weight: 500;
+                        color: $font-color-light;
+                        font-weight: $font-weight-bold;
                     }
                 }
             }
@@ -71,12 +81,12 @@ body {
 
                 i {
                     font-size: 1.7rem;
-                    color: #fff;
+                    color: $font-color-light;
                     cursor: pointer;
                 }
 
                 .active {
-                    color: blue;
+                    color: $font-color-active;
                     font-size: 1.7rem;
                 }
             }
