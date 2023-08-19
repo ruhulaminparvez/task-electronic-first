@@ -4,46 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".menuItems");
   const closeButton = document.querySelector(".closeButton");
 
-  function showSearch() {
-    const inputField = document.createElement("input");
-    inputField.classList.add("searchInput");
-    inputField.placeholder = "Minecraft, multiplayer...";
+  const originalStyles = {
+    background: getComputedStyle(bottomMenu).background,
+    gap: getComputedStyle(bottomMenu).gap,
+  };
 
-    const searchButton = document.createElement("button");
-    searchButton.classList.add("searchButton");
-    searchButton.textContent = 'Advance Search';
+  function toggleSearch(show) {
+    searchItems.innerHTML = show
+      ? `<input type="text" class="searchInput" placeholder="Minecraft, multiplayer...">
+         <button class="searchButton">Advance Search</button>`
+      : '<i class="fas fa-search"></i> ';
 
-    searchItems.innerHTML = "";
-    searchItems.appendChild(inputField);
-    searchItems.appendChild(searchButton);
-
-    for (const menuItem of menuItems) {
-      menuItem.style.display = "none";
-    }
-
-    closeButton.style.display = "block";
+    menuItems.forEach((menuItem) => (menuItem.style.display = show ? "none" : "block"));
+    closeButton.style.display = show ? "block" : "none";
 
     bottomMenu.style.transition = "background 0.3s";
-    bottomMenu.style.background = "none";
-
-    inputField.focus();
+    bottomMenu.style.background = show ? "none" : originalStyles.background;
+    bottomMenu.style.gap = show ? "0" : originalStyles.gap;
+    menuItems.forEach((menuItem) => (menuItem.style.display = show ? "none" : "flex"));
+    menuItems.forEach((menuItem) => (menuItem.style.gap = show ? "0" : "0.8rem"));
   }
 
-  function hideSearch() {
-    searchItems.innerHTML = "<i class='fas fa-search'></i> ";
-
-    for (const menuItem of menuItems) {
-      menuItem.style.display = "block";
-    }
-
-    closeButton.style.display = "none";
-
-    bottomMenu.style.transition = "background 0.3s";
-    bottomMenu.style.background = "linear-gradient(304deg, rgba(62, 78, 88, 1) 0%, rgba(11, 22, 29, 1) 97%)";
-    bottomMenu.style.gap = "2rem";
-  }
-
-  searchItems.addEventListener("click", showSearch);
-
-  closeButton.addEventListener("click", hideSearch);
+  searchItems.addEventListener("click", () => toggleSearch(true));
+  closeButton.addEventListener("click", () => toggleSearch(false));
 });
