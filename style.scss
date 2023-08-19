@@ -28,7 +28,7 @@ body {
         height: 100vh;
         width: 100%;
         position: relative;
-        clip-path: polygon(0 0,100% 0,100% 100%,0 90%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 
         .navContainer {
             display: flex;
@@ -47,6 +47,7 @@ body {
                     justify-content: center;
                     align-items: center;
                     gap: 2rem;
+                    margin-bottom: 0;
 
                     li {
                         list-style: none;
@@ -63,11 +64,23 @@ body {
                 }
             }
 
+            .lowerLinks {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+            }
+
             .lowerLinks>.bottomMenu {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
+                position: relative;
+                border-radius: 100px;
+                background: rgb(62, 78, 88);
+                background: linear-gradient(304deg, rgba(62, 78, 88, 1) 0%, rgba(11, 22, 29, 1) 97%);
+                animation: fade 0.3s ease-in-out;
 
                 li {
                     display: flex;
@@ -91,6 +104,75 @@ body {
                         font-size: 0.8rem;
                         color: $font-color-medium;
                     }
+                }
+
+                .searchItems {
+                    background: rgb(254, 75, 26);
+                    background: linear-gradient(180deg, rgba(254, 75, 26, 1) 0%, rgba(255, 116, 6, 1) 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    text-align: center;
+                    padding: 1rem 2rem;
+                    border-radius: 100px;
+                    cursor: pointer;
+
+                    .searchInput {
+                        border: none;
+                        outline: none;
+                        background: none;
+                        color: $font-color-light;
+                        font-size: 1rem;
+                        font-family: $font-family;
+                        font-weight: $font-weight-light;
+                        padding: 0.4rem 1rem;
+                        border-radius: 100px;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    .searchInput::placeholder {
+                        font-family: $font-family;
+                        font-weight: $font-weight-light;
+                        color: $font-color-medium;
+                    }
+
+                    .searchButton {
+                        background: none;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                        color: $font-color-light;
+                        font-size: 1rem;
+                        font-family: $font-family;
+                        font-weight: $font-weight-light;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
+
+            }
+
+            .closeButton {
+                display: none;
+                cursor: pointer;
+            }
+
+            .closeButton i {
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: 1;
+                }
+
+                to {
+                    opacity: 0;
                 }
             }
 
