@@ -6,6 +6,7 @@ $tertiary-color: #f2f2f2;
 $quaternary-color: #e5e5e5;
 
 $font-color-light: #fff;
+$font-color-medium: #ccc;
 $font-color-dark: #000;
 $font-color-active: blue;
 
@@ -20,6 +21,15 @@ body {
     font-family: $font-family;
 
     .headerContainer {
+        background-image: url('./assets/hero-bg/background.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        clip-path: polygon(0 0,100% 0,100% 100%,0 90%);
+
         .navContainer {
             display: flex;
             justify-content: space-between;
@@ -40,13 +50,13 @@ body {
 
                     li {
                         list-style: none;
-                        font-size: 1.2rem;
+                        font-size: 1rem;
                         font-weight: $font-weight-light;
-                        color: $font-color-light;
+                        color: $font-color-medium;
                         cursor: pointer;
 
                         &:hover {
-                            color: $font-color-light;
+                            color: $font-color-medium;
                             font-weight: $font-weight-bold;
                         }
                     }
@@ -60,6 +70,10 @@ body {
                 gap: 2rem;
 
                 li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.8rem;
                     list-style: none;
                     font-size: 1.2rem;
                     font-weight: $font-weight-light;
@@ -69,6 +83,13 @@ body {
                     &:hover {
                         color: $font-color-light;
                         font-weight: $font-weight-bold;
+                    }
+                }
+
+                .menuItems {
+                    .fa-chevron-down {
+                        font-size: 0.8rem;
+                        color: $font-color-medium;
                     }
                 }
             }
