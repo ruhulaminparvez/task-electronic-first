@@ -10,4 +10,4 @@ Using HTML, SCSS, Vanilla JS and Vite make a simple page with a list of products
 4. Run `npm run build` to build the project
 
 ## Live demo
-- [Live demo](https://electronic-first-task.netlify.app/)
+- [Live demo](https://task-electronic-first.netlify.app)
