@@ -112,6 +112,7 @@ body {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    gap: 10rem;
                     text-align: center;
                     padding: 1rem 2rem;
                     border-radius: 100px;
@@ -125,7 +126,7 @@ body {
                         font-size: 1rem;
                         font-family: $font-family;
                         font-weight: $font-weight-light;
-                        padding: 0.4rem 1rem;
+                        padding: 0rem 1rem;
                         border-radius: 100px;
                         transition: all 0.3s ease-in-out;
                     }
