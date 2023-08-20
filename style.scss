@@ -377,3 +377,48 @@ body {
         }
     }
 }
+
+@media (max-width: 767px) {
+    body {
+
+        .headerContainer {
+
+            .navContainer {
+                padding-top: 1rem;
+
+                .navLinks {
+                    display: none;
+                }
+
+                .lowerLinks {
+                    display: none;
+                }
+            }
+
+            .heroTextContainer {
+                .earlyAccess {
+                    display: none;
+                }
+            }
+        }
+
+        .mainContainer {
+            .cardHeading {
+                padding-bottom: 1.2rem;
+
+                .headingTitle {
+                    font-size: 1.2rem;
+                }
+
+                .viewBtn {
+                    font-size: 0.8rem;
+                }
+            }
+
+            .cardItems {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
